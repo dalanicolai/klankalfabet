@@ -1,59 +1,92 @@
+<CustButton@Button>:
+    font_size: 32
+
 <GridLayout>:
-    cols:13
+    id:keyboard
     rows:2
-    spacing: 10
-    padding: 10
 
-    Button:
-        text: "A"
-    Button:
-        text: "B"
-    Button:
-        text: "C"
-    Button:
-        text: "D"
-    Button:
-        text: "E"
-    Button:
-        text: "F"
-    Button:
-        text: "G"
-    Button:
-        text: "H"
-    Button:
-        text: "I"
-    Button:
-        text: "J"
-    Button:
-        text: "K"
-    Button:
-        text: "L"
-    Button:
-        text: "M"
+    BoxLayout:
+        spacing: 10
 
-    Button:
-        text: "N"
-    Button:
-        text: "O"
-    Button:
-        text: "P"
-    Button:
-        text: "Q"
-    Button:
-        text: "R"
-    Button:
-        text: "S"
-    Button:
-        text: "T"
-    Button:
-        text: "U"
-    Button:
-        text: "V"
-    Button:
-        text: "W"
-    Button:
-        text: "X"
-    Button:
-        text: "Y"
-    Button:
-        text: "Z"
+        CustButton:
+            text: "A"
+            on_press: app.key_pressed("sounds/a.ogg")
+        CustButton:
+            text: "B"
+            on_press: app.key_pressed("sounds/b.ogg")
+        CustButton:
+            text: "C"
+            on_press: app.key_pressed("sounds/c.ogg")
+        CustButton:
+            text: "D"
+            on_press: app.key_pressed("sounds/d.ogg")
+        CustButton:
+            text: "E"
+            on_press: app.key_pressed("sounds/e.ogg")
+        CustButton:
+            text: "F"
+            on_press: app.key_pressed("sounds/f.ogg")
+        CustButton:
+            text: "G"
+            on_press: app.key_pressed("sounds/g.ogg")
+        CustButton:
+            text: "H"
+            on_press: app.key_pressed("sounds/h.ogg")
+        CustButton:
+            text: "I"
+            on_press: app.key_pressed("sounds/i.ogg")
+        CustButton:
+            text: "J"
+            on_press: app.key_pressed("sounds/j.ogg")
+        CustButton:
+            text: "K"
+            on_press: app.key_pressed("sounds/k.ogg")
+        CustButton:
+            text: "L"
+            on_press: app.key_pressed("sounds/l.ogg")
+        CustButton:
+            text: "M"
+            on_press: app.key_pressed("sounds/m.ogg")
+
+    BoxLayout:
+        spacing: 10
+
+        CustButton:
+            text: "N"
+            on_press: app.key_pressed("sounds/n.ogg")
+        CustButton:
+            text: "O"
+            on_press: app.key_pressed("sounds/o.ogg")
+        CustButton:
+            text: "P"
+            on_press: app.key_pressed("sounds/p.ogg")
+        CustButton:
+            text: "Q"
+            on_press: app.key_pressed("sounds/q.ogg")
+        CustButton:
+            text: "R"
+            on_press: app.key_pressed("sounds/r.ogg")
+        CustButton:
+            text: "S"
+            on_press: app.key_pressed("sounds/s.ogg")
+        CustButton:
+            text: "T"
+            on_press: app.key_pressed("sounds/t.ogg")
+        CustButton:
+            text: "U"
+            on_press: app.key_pressed("sounds/u.ogg")
+        CustButton:
+            text: "V"
+            on_press: app.key_pressed("sounds/v.ogg")
+        CustButton:
+            text: "W"
+            on_press: app.key_pressed("sounds/w.ogg")
+        CustButton:
+            text: "X"
+            on_press: app.key_pressed("sounds/x.ogg")
+        CustButton:
+            text: "Y"
+            on_press: app.key_pressed("sounds/y.ogg")
+        CustButton:
+            text: "Z"
+            on_press: app.key_pressed("sounds/z.ogg")
