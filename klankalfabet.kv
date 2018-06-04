@@ -1,122 +1,132 @@
 <CustButton@Button>:
-    font_size: 30
+    font_size: self.height
 
-<GridLayout>:
-    id:keyboard
-    rows:3
+<BoxLayout>:
+    orientation: "vertical"
+    GridLayout:
+        Image:
+            source: app.img_source
 
-    BoxLayout:
-        spacing: 10
+    GridLayout:
+        size_hint: 1, 0.1
+        cols:2
+        padding:2
+
+        TextInput:
+            size_hint:0.7, 1
+            id: entry
+            font_size: 25
+        Button:
+            size_hint:0.3, 1
+            font_size:self.height
+            text: "afspelen"
+            on_press: app.playstring(entry.text)
+
+    GridLayout:
+        size_hint: 1, 0.4
+        id:keyboard
+        rows:4
+        cols:8
+        spacing:5
 
         CustButton:
             text: "A"
-            on_press: app.key_pressed("sounds/a.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/a.ogg")
         CustButton:
             text: "B"
-            on_press: app.key_pressed("sounds/b.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/b.ogg")
         CustButton:
             text: "C"
-            on_press: app.key_pressed("sounds/c.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/c.ogg")
         CustButton:
             text: "D"
-            on_press: app.key_pressed("sounds/d.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/d.ogg")
         CustButton:
             text: "E"
-            on_press: app.key_pressed("sounds/e.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/e.ogg")
         CustButton:
             text: "F"
-            on_press: app.key_pressed("sounds/f.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/f.ogg")
         CustButton:
             text: "G"
-            on_press: app.key_pressed("sounds/g.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/g.ogg")
         CustButton:
             text: "H"
-            on_press: app.key_pressed("sounds/h.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/h.ogg")
+
+
         CustButton:
             text: "I"
-            on_press: app.key_pressed("sounds/i.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/i.ogg")
         CustButton:
             text: "J"
-            on_press: app.key_pressed("sounds/j.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/j.ogg")
         CustButton:
             text: "K"
-            on_press: app.key_pressed("sounds/k.m4a")
-
-    BoxLayout:
-        spacing: 10
-
+            on_press: entry.text += self.text; app.key_pressed("sounds/k.ogg")
         CustButton:
             text: "L"
-            on_press: app.key_pressed("sounds/l.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/l.ogg")
         CustButton:
             text: "M"
-            on_press: app.key_pressed("sounds/m.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/m.ogg")
         CustButton:
             text: "N"
-            on_press: app.key_pressed("sounds/n.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/n.ogg")
         CustButton:
             text: "O"
-            on_press: app.key_pressed("sounds/o.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/o.ogg")
         CustButton:
             text: "P"
-            on_press: app.key_pressed("sounds/p.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/p.ogg")
+
         CustButton:
             text: "Q"
-            on_press: app.key_pressed("sounds/q.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/q.ogg")
         CustButton:
             text: "R"
-            on_press: app.key_pressed("sounds/r.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/r.ogg")
         CustButton:
             text: "S"
-            on_press: app.key_pressed("sounds/s.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/s.ogg")
         CustButton:
             text: "T"
-            on_press: app.key_pressed("sounds/t.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/t.ogg")
         CustButton:
             text: "U"
-            on_press: app.key_pressed("sounds/u.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/u.ogg")
         CustButton:
             text: "V"
-            on_press: app.key_pressed("sounds/v.m4a")
-
-
-    BoxLayout:
-        spacing: 10
-        
+            on_press: entry.text += self.text; app.key_pressed("sounds/v.ogg")
         CustButton:
             text: "W"
-            on_press: app.key_pressed("sounds/w.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/w.ogg")
         CustButton:
             text: "X"
-            on_press: app.key_pressed("sounds/x.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/x.ogg")
+
+
         CustButton:
             text: "Y"
-            on_press: app.key_pressed("sounds/y.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/y.ogg")
         CustButton:
             text: "Z"
-            on_press: app.key_pressed("sounds/z.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/z.ogg")
         CustButton:
             text: "OU"
-            on_press: app.key_pressed("sounds/ou.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/ou.ogg")
         CustButton:
             text: "OE"
-            on_press: app.key_pressed("sounds/oe.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/oe.ogg")
         CustButton:
             text: "IE"
-            on_press: app.key_pressed("sounds/ie.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/ie.ogg")
         CustButton:
             text: "EU"
-            on_press: app.key_pressed("sounds/eu.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/eu.ogg")
         CustButton:
             text: "UI"
-            on_press: app.key_pressed("sounds/ui.m4a")
-        CustButton:
-            text: "-;)"
-            on_press: app.key_pressed("sounds/grapje1.m4a")
+            on_press: entry.text += self.text; app.key_pressed("sounds/ui.ogg")
         CustButton:
             text: "^_^"
-            on_press: app.key_pressed("sounds/grapje2.m4a")
-
-
-
-
+            on_press: entry.text += self.text; app.key_pressed("sounds/grapje2.ogg")
