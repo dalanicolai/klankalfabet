@@ -18,6 +18,3 @@ klankalfabet = KlankalfabetApp()
 
 klankalfabet.run()
 
-# domme PyCharm
-
-print("PyCharms is een sukkel")
