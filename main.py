@@ -7,11 +7,10 @@ import os
 from kivy.core.audio import SoundLoader
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.image import Image
+# from kivy.uix.image import Image
 
 class KlankalfabetApp(App):
-    # def __init__(self):
-    #     self.img_source = "/images/sukkel.jpg"
+    # img_source = 'images/art.png'
 
     def build(self):
         return BoxLayout()
@@ -23,12 +22,13 @@ class KlankalfabetApp(App):
     def playstring(self, text):
         if text is '':
             text = "ronaldo is een sukkel"
-            self.img_source = "/images/sukkel.jpg"
         tts = gTTS(text, lang='nl')
         tts.save("good.mp3")
         os.system("mpg123 good.mp3")
+        return
 
 klankalfabet = KlankalfabetApp()
 
-klankalfabet.run()
+if __name__== '__main__':
+    klankalfabet.run()
 
