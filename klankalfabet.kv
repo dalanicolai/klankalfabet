@@ -1,33 +1,37 @@
 <CustButton@Button>:
     font_size: self.height
 
-<BoxLayout>:
+MainWindow:
+
+<MainWindow>:
     orientation: "vertical"
+    img_source: im
 
     FloatLayout:
-        text:'lksj'
-#        Image:
-#            id: im
-#            source: app.img_source
-#            pos_hint:{'x':0.0, 'y':0.0}
+        size_hint:1,5
+        Image:
+            id:im
+            source: 'images/art.png'
+            pos_hint:{'x':0,'y':0}
 
-    GridLayout:
-        size_hint: 1, 0.1
-        cols:2
+
+    BoxLayout:
+        size_hint: 1,1
         padding:2
 
         TextInput:
             size_hint:0.7, 1
             id: entry
             font_size: 25
+
         Button:
             size_hint:0.3, 1
-            font_size:self.height
+            font_size:self.height-10
             text: "afspelen"
-            on_press: app.playstring()
+            on_press: root.playstring(entry.text)
 
     GridLayout:
-        size_hint: 1, 0.4
+        size_hint: 1,4
         id:keyboard
         rows:4
         cols:8
