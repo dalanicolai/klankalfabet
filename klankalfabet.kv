@@ -1,5 +1,5 @@
 <CustButton@Button>:
-    font_size: self.height
+    font_size: self.height/2
 
 MainWindow:
 
@@ -19,16 +19,16 @@ MainWindow:
         size_hint: 1,1
         padding:2
 
-        TextInput:
+        Label:
             size_hint:0.7, 1
             id: entry
-            font_size: 25
+            font_size: self.height
 
         Button:
             size_hint:0.3, 1
-            font_size:self.height-10
+            font_size:self.width/8
             text: "afspelen"
-            on_press: root.playstring(entry.text)
+            on_press: root.playstring(entry.text,im)
 
     GridLayout:
         size_hint: 1,4
