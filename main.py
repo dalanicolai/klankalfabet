@@ -25,14 +25,16 @@ class MainWindow(BoxLayout):
         tts.save("good.mp3")
         os.system("mpg123 good.mp3")
 
+    def key_pressed(self, letter):
+        self.img_source.source = ''.join(('images/',letter,'.jpg'))
+        self.img_source.reload()
+        sound = SoundLoader.load(''.join(('sounds/',letter,'.ogg')))
+        sound.play()
+
 class KlankalfabetApp(App):
 
     def build(self):
         pass
-
-    def key_pressed(self, letter):
-        sound = SoundLoader.load(letter)
-        sound.play()
 
 klankalfabet = KlankalfabetApp()
 
