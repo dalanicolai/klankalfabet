@@ -32,7 +32,7 @@ MainWindow:
         Button:
             font_size:self.width/8
             text: "afspelen"
-            on_press: root.playstring(entry.text,im)
+            on_press: root.playstring(entry.text, im)
 
         Button:
             font_size:self.width/8
@@ -40,10 +40,10 @@ MainWindow:
             on_press: entry.text=''
 
         Button:
-            on_press: root.playstring(self.text,im)
+            on_press: root.playimage(self.text, im)
             id: im_button
             font_size:self.width/8
-            text: "Verassing"
+            text: "verrassing"
 
 
     GridLayout:

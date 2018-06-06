@@ -22,7 +22,7 @@ class MainWindow(BoxLayout):
            'm':'Messi', 'n':'Neymar', 'o':'Ozil', 'p':'Puyol',
            'q':'Quaresma', 'r':'Ronaldinho', 's':'Suarez', 't':'Turan',
            'u':'Ufo', 'v':'Valdez', 'w':'Weesp', 'x':'Xavi', 'y':'Yamen',
-           'z':'Zidane', 'ou':'Auw', 'oe':'OE oe oe', 'ie':'Iiiii',
+           'z':'Zidane', 'ou':'Auw', 'oe':'OE, oe, oe', 'ie':'Iiiii',
            'eu':'Euzil', 'ui':'Ui', 'grapje':'Stoer'}
 
     def on_parent(self, widget, parent):
@@ -52,10 +52,9 @@ class MainWindow(BoxLayout):
         # os.system("mpg123 good.mp3")
 
 
-    def playimage(self, text, im_button):
-        if text == '':
-            text = "ronaldo is een sukkel"
-            # self.img_source.source = 'images/sukkel.jpg'
+    def playimage(self, text, img):
+        if text == 'verrassing':
+            self.img_source.source = 'images/verrassing.jpg'
             img.reload()
         if platform == 'android':
             # self.tts.setLanguage(self.Locale.US)
