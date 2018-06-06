@@ -16,7 +16,14 @@ from kivy.utils import platform
 
 class MainWindow(BoxLayout):
     # img_source = ObjectProperty(id)
-    words={'a','Ajax'}
+    words={'a':'Ajax', 'b':'Barcelona', 'c':'Cillessen', 'd':'Dommerd',
+           'e':'Einstein', 'f':'Figo', 'g':'Guardiola', 'h':'Henry',
+           'i':'Iniesta','j':'Johan Cruijf', 'k':'Kahn', 'l':'Liverpool',
+           'm':'Messi', 'n':'Neymar', 'o':'Ozil', 'p':'Puyol',
+           'q':'Quaresma', 'r':'Ronaldinho', 's':'Suarez', 't':'Turan',
+           'u':'Ufo', 'v':'Valdez', 'w':'Weesp', 'x':'Xavi', 'y':'Yamen',
+           'z':'Zidane', 'ou':'Auw', 'oe':'OE oe oe', 'ie':'Iiiii',
+           'eu':'Euzil', 'ui':'Ui', 'grapje':'Stoer'}
 
     def on_parent(self, widget, parent):
         if platform == 'android':
@@ -44,11 +51,24 @@ class MainWindow(BoxLayout):
         # tts.save("good.mp3")
         # os.system("mpg123 good.mp3")
 
-    def key_pressed(self, letter):
+
+    def playimage(self, text, im_button):
+        if text == '':
+            text = "ronaldo is een sukkel"
+            # self.img_source.source = 'images/sukkel.jpg'
+            img.reload()
+        if platform == 'android':
+            # self.tts.setLanguage(self.Locale.US)
+            self.tts.speak(text, self.TextToSpeech.QUEUE_FLUSH, None)
+
+
+    def key_pressed(self, letter, im_but):
         self.img_source.source = ''.join(('images/',letter,'.jpg'))
         self.img_source.reload()
         sound = SoundLoader.load(''.join(('sounds/',letter,'.ogg')))
         sound.play()
+        im_but.text=self.words[letter]
+
 
 class KlankalfabetApp(App):
 
