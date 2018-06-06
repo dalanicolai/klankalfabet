@@ -14,8 +14,16 @@ from kivy.properties import ObjectProperty
 
 from kivy.utils import platform
 
+str='abcdefghijklmnopqrstuvwxyz'
+alphabet=[x for x in str]
+bivowels=['ou','oe','ie','ij','eu','ui']
+keys=alphabet+bivowels
+
 class MainWindow(BoxLayout):
     # img_source = ObjectProperty(id)
+    keyboard = ObjectProperty(None)
+
+    words = {'a': 'Ajax', 'b': 'Barcelona', 'c': 'Cillessen', 'd': 'Daniel', 'e': 'Einstein'}
 
     def on_parent(self, widget, parent):
         if platform == 'android':
@@ -32,13 +40,18 @@ class MainWindow(BoxLayout):
 
     def playstring(self, text, img):
         if text == '':
-            text = "ronaldo is een sukkel"
+            text = "ronaldo is een sukkel?"
             img.source = 'images/sukkel.jpg'
             # self.img_source.source = 'images/sukkel.jpg'
             img.reload()
         if platform == 'android':
             # self.tts.setLanguage(self.Locale.US)
             self.tts.speak(text, self.TextToSpeech.QUEUE_FLUSH, None)
+
+    def playimage(self,text):
+        if text == '':
+            text = "Mooi plaatje he?"
+        self.tts.speak(text, self.TextToSpeech.QUEUE_FLUSH, None)
 
         # tts.save("good.mp3")
         # os.system("mpg123 good.mp3")
@@ -52,8 +65,10 @@ class MainWindow(BoxLayout):
 class KlankalfabetApp(App):
 
     def build(self):
-        pass
-
+        g = MainWindow()
+        for i in keys:
+            g.keyboard.add_widget(Button(id=i, text=i.upper()))
+        return g
 
 klankalfabet = KlankalfabetApp()
 

@@ -1,10 +1,11 @@
-<CustButton@Button>:
-    font_size: self.height/2
+#<CustButton@Button>:
+#    font_size: self.height/2
 
-MainWindow:
+#MainWindow:
 
 <MainWindow>:
     orientation: "vertical"
+    keyboard: keyboard
     img_source: im
 
     FloatLayout:
@@ -41,113 +42,113 @@ MainWindow:
         Button:
             font_size:self.width/8
             text: "foto"
-            on_press: root.playstring(entry.text,im)
+            on_press: root.playstring(self.text)
 
     GridLayout:
-        size_hint: 1,4
         id:keyboard
+        size_hint: 1,4
         rows:4
         cols:8
         spacing:5
 
-        CustButton:
-            text: "A"
-            on_press: entry.text += self.text; root.key_pressed("a")
-        CustButton:
-            text: "B"
-            on_press: entry.text += self.text; root.key_pressed("b")
-        CustButton:
-            text: "C"
-            on_press: entry.text += self.text; root.key_pressed("c")
-        CustButton:
-            text: "D"
-            on_press: entry.text += self.text; root.key_pressed("d")
-        CustButton:
-            text: "E"
-            on_press: entry.text += self.text; root.key_pressed("e")
-        CustButton:
-            text: "F"
-            on_press: entry.text += self.text; root.key_pressed("f")
-        CustButton:
-            text: "G"
-            on_press: entry.text += self.text; root.key_pressed("g")
-        CustButton:
-            text: "H"
-            on_press: entry.text += self.text; root.key_pressed("h")
-
-
-        CustButton:
-            text: "I"
-            on_press: entry.text += self.text; root.key_pressed("i")
-        CustButton:
-            text: "J"
-            on_press: entry.text += self.text; root.key_pressed("j")
-        CustButton:
-            text: "K"
-            on_press: entry.text += self.text; root.key_pressed("k")
-        CustButton:
-            text: "L"
-            on_press: entry.text += self.text; root.key_pressed("l")
-        CustButton:
-            text: "M"
-            on_press: entry.text += self.text; root.key_pressed("m")
-        CustButton:
-            text: "N"
-            on_press: entry.text += self.text; root.key_pressed("n")
-        CustButton:
-            text: "O"
-            on_press: entry.text += self.text; root.key_pressed("o")
-        CustButton:
-            text: "P"
-            on_press: entry.text += self.text; root.key_pressed("p")
-
-        CustButton:
-            text: "Q"
-            on_press: entry.text += self.text; root.key_pressed("q")
-        CustButton:
-            text: "R"
-            on_press: entry.text += self.text; root.key_pressed("r")
-        CustButton:
-            text: "S"
-            on_press: entry.text += self.text; root.key_pressed("s")
-        CustButton:
-            text: "T"
-            on_press: entry.text += self.text; root.key_pressed("t")
-        CustButton:
-            text: "U"
-            on_press: entry.text += self.text; root.key_pressed("u")
-        CustButton:
-            text: "V"
-            on_press: entry.text += self.text; root.key_pressed("v")
-        CustButton:
-            text: "W"
-            on_press: entry.text += self.text; root.key_pressed("w")
-        CustButton:
-            text: "X"
-            on_press: entry.text += self.text; root.key_pressed("x")
-
-
-        CustButton:
-            text: "Y"
-            on_press: entry.text += self.text; root.key_pressed("y")
-        CustButton:
-            text: "Z"
-            on_press: entry.text += self.text; root.key_pressed("z")
-        CustButton:
-            text: "OU"
-            on_press: entry.text += self.text; root.key_pressed("ou")
-        CustButton:
-            text: "OE"
-            on_press: entry.text += self.text; root.key_pressed("oe")
-        CustButton:
-            text: "IE"
-            on_press: entry.text += self.text; root.key_pressed("ie")
-        CustButton:
-            text: "EU"
-            on_press: entry.text += self.text; root.key_pressed("eu")
-        CustButton:
-            text: "UI"
-            on_press: entry.text += self.text; root.key_pressed("ui")
-        CustButton:
-            text: "^_^"
-            on_press: entry.text += self.text; root.key_pressed("grapje2")
+#        CustButton:
+#            text: "A"
+#            on_press: entry.text += self.text; root.key_pressed("a")
+#        CustButton:
+#            text: "B"
+#            on_press: entry.text += self.text; root.key_pressed("b")
+#        CustButton:
+#            text: "C"
+#            on_press: entry.text += self.text; root.key_pressed("c")
+#        CustButton:
+#            text: "D"
+#            on_press: entry.text += self.text; root.key_pressed("d")
+#        CustButton:
+#            text: "E"
+#            on_press: entry.text += self.text; root.key_pressed("e")
+#        CustButton:
+#            text: "F"
+#            on_press: entry.text += self.text; root.key_pressed("f")
+#        CustButton:
+#            text: "G"
+#            on_press: entry.text += self.text; root.key_pressed("g")
+#        CustButton:
+#            text: "H"
+#            on_press: entry.text += self.text; root.key_pressed("h")
+#
+#
+#        CustButton:
+#            text: "I"
+#            on_press: entry.text += self.text; root.key_pressed("i")
+#        CustButton:
+#            text: "J"
+#            on_press: entry.text += self.text; root.key_pressed("j")
+#        CustButton:
+#            text: "K"
+#            on_press: entry.text += self.text; root.key_pressed("k")
+#        CustButton:
+#            text: "L"
+#            on_press: entry.text += self.text; root.key_pressed("l")
+#        CustButton:
+#            text: "M"
+#            on_press: entry.text += self.text; root.key_pressed("m")
+#        CustButton:
+#            text: "N"
+#            on_press: entry.text += self.text; root.key_pressed("n")
+#        CustButton:
+#            text: "O"
+#            on_press: entry.text += self.text; root.key_pressed("o")
+#        CustButton:
+#            text: "P"
+#            on_press: entry.text += self.text; root.key_pressed("p")
+#
+#        CustButton:
+#            text: "Q"
+#            on_press: entry.text += self.text; root.key_pressed("q")
+#        CustButton:
+#            text: "R"
+#            on_press: entry.text += self.text; root.key_pressed("r")
+#        CustButton:
+#            text: "S"
+#            on_press: entry.text += self.text; root.key_pressed("s")
+#        CustButton:
+#            text: "T"
+#            on_press: entry.text += self.text; root.key_pressed("t")
+#        CustButton:
+#            text: "U"
+#            on_press: entry.text += self.text; root.key_pressed("u")
+#        CustButton:
+#            text: "V"
+#            on_press: entry.text += self.text; root.key_pressed("v")
+#        CustButton:
+#            text: "W"
+#            on_press: entry.text += self.text; root.key_pressed("w")
+#        CustButton:
+#            text: "X"
+#            on_press: entry.text += self.text; root.key_pressed("x")
+#
+#
+#        CustButton:
+#            text: "Y"
+#            on_press: entry.text += self.text; root.key_pressed("y")
+#        CustButton:
+#            text: "Z"
+#            on_press: entry.text += self.text; root.key_pressed("z")
+#        CustButton:
+#            text: "OU"
+#            on_press: entry.text += self.text; root.key_pressed("ou")
+#        CustButton:
+#            text: "OE"
+#            on_press: entry.text += self.text; root.key_pressed("oe")
+#        CustButton:
+#            text: "IE"
+#            on_press: entry.text += self.text; root.key_pressed("ie")
+#        CustButton:
+#            text: "EU"
+#            on_press: entry.text += self.text; root.key_pressed("eu")
+#        CustButton:
+#            text: "UI"
+#            on_press: entry.text += self.text; root.key_pressed("ui")
+#        CustButton:
+#            text: "^_^"
+#            on_press: entry.text += self.text; root.key_pressed("grapje2")
