@@ -4,27 +4,36 @@ kivy.require('1.10.0')
 import os
 from time import sleep
 
-from gtts import gTTS
+# from jnius import autoclass
 
 from kivy.core.audio import SoundLoader
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import ObjectProperty
 
+from kivy.utils import platform
+
 class MainWindow(BoxLayout):
-    img_source = ObjectProperty(id)
-    words = {'a': 'Ajax', 'b': 'Barcelona', 'c': 'Cillessen', 'd': 'Daniel', 'e': 'Einstein'}
+    # img_source = ObjectProperty(id)
 
     def img_path(self):
         print(self.img_source.source)
 
 
-    def playstring(self, text):
-        if text is '':
+    def playstring(self, text, img):
+        if text == '':
             text = "ronaldo is een sukkel"
-            self.img_source.source = 'images/sukkel.jpg'
-            self.img_source.reload()
-        # tts = gTTS(text, lang='nl')
+            img.source = 'images/sukkel.jpg'
+            # self.img_source.source = 'images/sukkel.jpg'
+            img.reload()
+        # Locale = autoclass('java.util.Locale')
+        # if platform == 'android':
+        #     PythonActivity = autoclass('org.renpy.android.PythonActivity')
+        # TextToSpeech = autoclass('android.speech.tts.TextToSpeech')
+        # tts = TextToSpeech(PythonActivity.mActivity, None)
+        # tts.setLanguage(Locale.US)
+        # tts.speak('Hello World.', TextToSpeech.QUEUE_FLUSH, None)
+
         # tts.save("good.mp3")
         # os.system("mpg123 good.mp3")
 
@@ -33,11 +42,6 @@ class MainWindow(BoxLayout):
         self.img_source.reload()
         sound = SoundLoader.load(''.join(('sounds/',letter,'.ogg')))
         sound.play()
-        sleep(2)
-        tts = gTTS(self.words[letter], lang='nl')
-        tts.save("good.mp3")
-        os.system("mpg123 good.mp3")
-
 
 class KlankalfabetApp(App):
 
