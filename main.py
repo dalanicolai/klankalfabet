@@ -16,6 +16,7 @@ from kivy.utils import platform
 
 class MainWindow(BoxLayout):
     # img_source = ObjectProperty(id)
+    words={'a','Ajax'}
 
     def on_parent(self, widget, parent):
         if platform == 'android':
