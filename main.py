@@ -9,12 +9,22 @@ from jnius import autoclass
 from kivy.core.audio import SoundLoader
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.button import Button
 from kivy.properties import ObjectProperty
 
 from kivy.utils import platform
 
 class MainWindow(BoxLayout):
     # img_source = ObjectProperty(id)
+
+    def on_parent(self, widget, parent):
+        if platform == 'android':
+            self.Locale = autoclass('java.util.Locale')
+            self.PythonActivity = autoclass('org.kivy.android.PythonActivity')
+            self.TextToSpeech = autoclass('android.speech.tts.TextToSpeech')
+            self.tts = self.TextToSpeech(self.PythonActivity.mActivity, None)
+            # tts.setLanguage(Locale.US)
+            # tts.speak(text, TextToSpeech.QUEUE_FLUSH, None)
 
     def img_path(self):
         print(self.img_source.source)
@@ -26,13 +36,9 @@ class MainWindow(BoxLayout):
             img.source = 'images/sukkel.jpg'
             # self.img_source.source = 'images/sukkel.jpg'
             img.reload()
-        Locale = autoclass('java.util.Locale')
         if platform == 'android':
-            PythonActivity = autoclass('org.renpy.android.PythonActivity')
-        TextToSpeech = autoclass('android.speech.tts.TextToSpeech')
-        tts = TextToSpeech(PythonActivity.mActivity, None)
-        tts.setLanguage(Locale.US)
-        tts.speak('Hello World.', TextToSpeech.QUEUE_FLUSH, None)
+            # self.tts.setLanguage(self.Locale.US)
+            self.tts.speak(text, self.TextToSpeech.QUEUE_FLUSH, None)
 
         # tts.save("good.mp3")
         # os.system("mpg123 good.mp3")
@@ -47,6 +53,7 @@ class KlankalfabetApp(App):
 
     def build(self):
         pass
+
 
 klankalfabet = KlankalfabetApp()
 
