@@ -24,10 +24,23 @@ MainWindow:
             id: entry
             font_size: self.height
 
+    BoxLayout:
+        size_hint: 1,1
+        padding:2
+
         Button:
-            size_hint:0.3, 1
             font_size:self.width/8
             text: "afspelen"
+            on_press: root.playstring(entry.text,im)
+
+        Button:
+            font_size:self.width/8
+            text: "wissen"
+            on_press: entry.text=''
+
+        Button:
+            font_size:self.width/8
+            text: "foto"
             on_press: root.playstring(entry.text,im)
 
     GridLayout:
