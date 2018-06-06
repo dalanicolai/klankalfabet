@@ -4,12 +4,14 @@ kivy.require('1.10.0')
 import os
 from time import sleep
 
-from jnius import autoclass
+# from jnius import autoclass
 
 from kivy.core.audio import SoundLoader
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import ObjectProperty
+
+from kivy.utils import platform
 
 class MainWindow(BoxLayout):
     # img_source = ObjectProperty(id)
@@ -24,12 +26,14 @@ class MainWindow(BoxLayout):
             img.source = 'images/sukkel.jpg'
             # self.img_source.source = 'images/sukkel.jpg'
             img.reload()
-        Locale = autoclass('java.util.Locale')
-        PythonActivity = autoclass('org.renpy.android.PythonActivity')
-        TextToSpeech = autoclass('android.speech.tts.TextToSpeech')
-        tts = TextToSpeech(PythonActivity.mActivity, None)
-        tts.setLanguage(Locale.US)
-        tts.speak('Hello World.', TextToSpeech.QUEUE_FLUSH, None)
+        # Locale = autoclass('java.util.Locale')
+        # if platform == 'android':
+        #     PythonActivity = autoclass('org.renpy.android.PythonActivity')
+        # TextToSpeech = autoclass('android.speech.tts.TextToSpeech')
+        # tts = TextToSpeech(PythonActivity.mActivity, None)
+        # tts.setLanguage(Locale.US)
+        # tts.speak('Hello World.', TextToSpeech.QUEUE_FLUSH, None)
+
         # tts.save("good.mp3")
         # os.system("mpg123 good.mp3")
 
