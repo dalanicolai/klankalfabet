@@ -23,7 +23,7 @@ class MainWindow(BoxLayout):
            'q':'Quaresma', 'r':'Ronaldinho', 's':'Suarez', 't':'Turan',
            'u':'Ufo', 'v':'Valdez', 'w':'Weesp', 'x':'Xavi', 'y':'Yamen',
            'z':'Zidane', 'ou':'Auw', 'oe':'OE, oe, oe', 'ie':'Iiiii',
-           'eu':'Euzil', 'ui':'Ui', 'grapje':'Stoer'}
+           'eu':'Euzil', 'ui':'Ui', 'grapje':'Slimmerd'}
 
     def on_parent(self, widget, parent):
         if platform == 'android':
