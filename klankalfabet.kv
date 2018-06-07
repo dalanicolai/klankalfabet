@@ -176,6 +176,10 @@ MainWindow:
             text: "IE"
             on_press: entry.text += self.text; root.key_pressed("ie", im_button)
         CustButton:
+            id:grapje
+            text: "IJ/EI"
+            on_press: entry.text += self.text; root.key_pressed("ei", im_button)
+        CustButton:
             id:eu
             text: "EU"
             on_press: entry.text += self.text; root.key_pressed("eu", im_button)
@@ -183,7 +187,4 @@ MainWindow:
             id:ui
             text: "UI"
             on_press: entry.text += self.text; root.key_pressed("ui", im_button)
-        CustButton:
-            id:grapje
-            text: "^_^"
-            on_press: entry.text += self.text; root.key_pressed("grapje", im_button)
+
