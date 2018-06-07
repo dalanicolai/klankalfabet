@@ -31,6 +31,11 @@ class MainWindow(BoxLayout):
             self.PythonActivity = autoclass('org.kivy.android.PythonActivity')
             self.TextToSpeech = autoclass('android.speech.tts.TextToSpeech')
             self.tts = self.TextToSpeech(self.PythonActivity.mActivity, None)
+
+            # self.PythonActivity2 = autoclass('org.renpy.android.PythonActivity')
+            self.Context = autoclass('android.content.Context')
+            self.activity = self.PythonActivity.mActivity
+            self.vibrator = self.activity.getSystemService(self.Context.VIBRATOR_SERVICE)
             # tts.setLanguage(Locale.US)
             # tts.speak(text, TextToSpeech.QUEUE_FLUSH, None)
 
@@ -56,9 +61,20 @@ class MainWindow(BoxLayout):
         if text == 'verrassing':
             self.img_source.source = 'images/verrassing.jpg'
             img.reload()
-        if platform == 'android':
+            if platform == 'android':
+                # self.tts.setLanguage(self.Locale.US)
+                self.tts.speak(text, self.TextToSpeech.QUEUE_FLUSH, None)
+                for i in range(10):
+                    self.vibrator.vibrate(100)
+                    sleep(0.2)
+        elif platform == 'android':
             # self.tts.setLanguage(self.Locale.US)
             self.tts.speak(text, self.TextToSpeech.QUEUE_FLUSH, None)
+            if text == 'OE, oe, oe':
+                sleep(1)
+                for i in range(3):
+                    self.vibrator.vibrate(100)
+                    sleep(0.2)
 
 
     def key_pressed(self, letter, im_but):
