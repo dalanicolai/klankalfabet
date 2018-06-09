@@ -43,8 +43,9 @@ class MainWindow(BoxLayout):
         print(self.img_source.source)
 
 
-    def playstring(self, text, img):
+    def playstring(self, text, img, im_but):
         if text == '':
+            im_but.text = "Sukkel"
             text = "ronaldo is een sukkel"
             img.source = 'images/sukkel.jpg'
             # self.img_source.source = 'images/sukkel.jpg'
