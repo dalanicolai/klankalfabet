@@ -16,14 +16,14 @@ from kivy.utils import platform
 
 class MainWindow(BoxLayout):
     # img_source = ObjectProperty(id)
-    words={'a':'Ajax', 'b':'Barcelona', 'c':'Cillessen', 'd':'Dommerd',
+    words={'a':'Ajax', 'b':'Barcelona', 'c':'Cillessen', 'd':'Dennis Bergkamp',
            'e':'Einstein', 'f':'Figo', 'g':'Guardiola', 'h':'Henry',
            'i':'Iniesta','j':'Johan Cruijf', 'k':'Kahn', 'l':'Liverpool',
-           'm':'Messi', 'n':'Neymar', 'o':'Ozil', 'p':'Puyol',
+           'm':'Messi', 'n':'Neymar', 'o':'Onana', 'p':'Puyol',
            'q':'Quaresma', 'r':'Ronaldinho', 's':'Suarez', 't':'Turan',
-           'u':'Ufo', 'v':'Valdez', 'w':'Weesp', 'x':'Xavi', 'y':'Yamen',
+           'u':'Ufo', 'v':'Valdez', 'w':'Weesp', 'x':'Xavi', 'y':'Griekse Y',
            'z':'Zidane', 'ou':'Auw', 'oe':'OE, oe, oe', 'ie':'Iiiii',
-           'ei':'Ei','eu':'Euzil', 'ui':'Ui'}
+           'ei':'Ei','eu':'Ozil', 'ui':'Ui'}
 
     def on_parent(self, widget, parent):
         if platform == 'android':
