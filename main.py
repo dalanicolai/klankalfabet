@@ -3,6 +3,7 @@ kivy.require('1.10.0')
 
 import os
 from time import sleep
+import random
 
 from jnius import autoclass
 
@@ -16,14 +17,14 @@ from kivy.utils import platform
 
 class MainWindow(BoxLayout):
     # img_source = ObjectProperty(id)
-    words={'a':'Ajax', 'b':'Barcelona', 'c':'Cillessen', 'd':'Dennis Bergkamp',
-           'e':'Einstein', 'f':'Figo', 'g':'Guardiola', 'h':'Henry',
-           'i':'Iniesta','j':'Johan Cruijf', 'k':'Kahn', 'l':'Liverpool',
-           'm':'Messi', 'n':'Neymar', 'o':'Onana', 'p':'Puyol',
-           'q':'Quaresma', 'r':'Ronaldinho', 's':'Suarez', 't':'Turan',
-           'u':'Ufo', 'v':'Valdez', 'w':'Weesp', 'x':'Xavi', 'y':'Griekse Y',
-           'z':'Zidane', 'ou':'Auw', 'oe':'OE, oe, oe', 'ie':'Iiiii',
-           'ei':'Ei','eu':'Ozil', 'ui':'Ui'}
+    words={'a':['appel','aardbei','ananas'], 'b':['banaan'], 'c':['citroen'], 'd':['druiven'],
+           'e':['Einstein'], 'f':['Figo'], 'g':['grapefruit'], 'h':['Henry'],
+           'i':['Iniesta'],'j':['Johan Cruijf'], 'k':['kiwi','komkommer','kokosnoot'], 'l':['lepel','limoen'],
+           'm':['mes','meloen'], 'n':['Neymar'], 'o':['Onana'], 'p':['peer','pompoen','pan'],
+           'q':['Quaresma'], 'r':['Ronaldinho'], 's':['sinaasappel'], 't':['tomaat'],
+           'u':['Ufo'], 'v':['vork'], 'w':['Weesp'], 'x':['Xavi'], 'y':['Griekse Y'],
+           'z':['Zidane'], 'ou':['Auw'], 'oe':['OE, oe, oe'], 'ie':['Iiiii'],
+           'ei':['Ei'],'eu':['Ozil'], 'ui':['Ui']}
 
     def on_parent(self, widget, parent):
         if platform == 'android':
@@ -36,7 +37,7 @@ class MainWindow(BoxLayout):
             self.Context = autoclass('android.content.Context')
             self.activity = self.PythonActivity.mActivity
             self.vibrator = self.activity.getSystemService(self.Context.VIBRATOR_SERVICE)
-            # tts.setLanguage(Locale.US)
+            # tts.setLanguage(Locale.US)l
             # tts.speak(text, TextToSpeech.QUEUE_FLUSH, None)
 
     def img_path(self):
@@ -79,11 +80,12 @@ class MainWindow(BoxLayout):
 
 
     def key_pressed(self, letter, im_but):
-        self.img_source.source = ''.join(('images/',letter,'.jpg'))
+        element = random.choice(self.words[letter])
+        self.img_source.source = ''.join(('images/',element,'.jpg'))
         self.img_source.reload()
-        sound = SoundLoader.load(''.join(('sounds/',letter,'.ogg')))
+        sound = SoundLoader.load(''.join(('sounds/',element,'.ogg')))
         sound.play()
-        im_but.text=self.words[letter]
+        im_but.text=random.choice(self.words[letter])
 
 
 class KlankalfabetApp(App):
