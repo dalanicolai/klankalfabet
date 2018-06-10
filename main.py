@@ -22,13 +22,13 @@ class MainWindow(BoxLayout):
     auto_button = ObjectProperty(id)
 
     words={'a':['appel','aardbei','ananas'], 'b':['banaan','bezem'], 'c':['citroen'], 'd':['druiven'],
-           'e':['emmer'], 'f':['fruit'], 'g':['grapefruit','granaatappel'], 'h':['Henry'],
-           'i':['Iniesta'],'j':['Johan Cruijf'], 'k':['kiwi','komkommer','kokosnoot'], 'l':['lepel','limoen','lychee'],
+           'e':['emmer'], 'f':['fruit'], 'g':['grapefruit','granaatappel'], 'h':['hamer'],
+           'i':['italie'],'j':['jas'], 'k':['kiwi','komkommer','kokosnoot'], 'l':['lepel','limoen','lychee'],
            'm':['mes','meloen','mandarijn','mango'], 'n':['nectarine'], 'o':['olijven'], 'p':['peer','pompoen','pan','perzik','paprika'],
-           'q':['Quaresma'], 'r':['rozenbottel','roos'], 's':['sinaasappel'], 't':['tomaat'],
-           'u':['Ufo'], 'v':['vork'], 'w':['wesp'], 'x':['xylofoon'], 'y':['Griekse Y'],
-           'z':['zakmes'], 'ou':['Auw'], 'oe':['OE, oe, oe'], 'ie':['Iiiii'],
-           'ei':['Ei'],'eu':['Ozil'], 'ui':['Ui']}
+           'q':['qubit','quarks','quinoa'], 'r':['rozenbottel','roos'], 's':['sinaasappel'], 't':['tomaat'],
+           'u':['ufo'], 'v':['vork','vincent van gogh'], 'w':['wesp'], 'x':['xylofoon'], 'y':['Griekse Y'],
+           'z':['zakmes'], 'ou':['auw'], 'oe':['oe, oe, oe'], 'ie':['iiiii'],
+           'ei':['ei'],'eu':['europa'], 'ui':['ui']}
 
     def on_parent(self, widget, parent):
         if platform == 'android':
@@ -45,11 +45,11 @@ class MainWindow(BoxLayout):
             # tts.speak(text, TextToSpeech.QUEUE_FLUSH, None)
 
     # def img_path(self):
-    #     print(self.img_source.source)
+    #     print(self.im.source)
 
     def playimage(self, text, img):
         if text == 'verrassing':
-            self.img_source.source = 'images/verrassing.jpg'
+            self.im.source = 'images/verrassing.jpg'
             img.reload()
             if platform == 'android':
                 # self.tts.setLanguage(self.Locale.US)
@@ -60,7 +60,7 @@ class MainWindow(BoxLayout):
         elif platform == 'android':
             # self.tts.setLanguage(self.Locale.US)
             self.tts.speak(self.element, self.TextToSpeech.QUEUE_FLUSH, None)
-            if text == 'OE, oe, oe':
+            if text == 'oe, oe, oe':
                 sleep(1)
                 for i in range(3):
                     self.vibrator.vibrate(100)
@@ -84,7 +84,7 @@ class MainWindow(BoxLayout):
             self.im_button.text = "Sukkel"
             text = "ronaldo is een sukkel"
             self.im.source = 'images/sukkel.jpg'
-            # self.img_source.source = 'images/sukkel.jpg'
+            # self.im.source = 'images/sukkel.jpg'
             self.im.reload()
         if platform == 'android':
             # self.tts.setLanguage(self.Locale.US)
@@ -95,8 +95,8 @@ class MainWindow(BoxLayout):
 
     def key_pressed(self, letter):
         self.element = random.choice(self.words[letter])
-        self.img_source.source = ''.join(('images/',self.element,'.jpg'))
-        self.img_source.reload()
+        self.im.source = ''.join(('images/',self.element,'.jpg'))
+        self.im.reload()
         sound = SoundLoader.load(''.join(('sounds/',letter,'.ogg')))
         sound.play()
         if self.hide_button.text == 'verstop':

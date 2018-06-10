@@ -5,18 +5,10 @@ MainWindow:
 
 <MainWindow>:
     orientation: "vertical"
-    img_source: im
+    im: im
     im_button: im_button
     auto_button:auto_button
     hide_button:hide_button
-
-    FloatLayout:
-        size_hint:1,5
-        Image:
-            id:im
-            source: 'images/art.png'
-            pos_hint:{'x':0,'y':0}
-            allow_stretch: True
 
     BoxLayout:
         size_hint: 1,1
@@ -46,6 +38,15 @@ MainWindow:
             on_press: root.toggle_hide(self.text)
 
 
+    FloatLayout:
+        size_hint:1,5
+        Image:
+            id:im
+            source: 'images/art.png'
+            pos_hint:{'x':0,'y':0}
+            allow_stretch: True
+
+
     BoxLayout:
         size_hint: 1,1
         padding: 0,0,0,5
@@ -57,20 +58,25 @@ MainWindow:
             id: entry
             font_size: self.height
 
+    BoxLayout:
+        size_hint: 1,1
+        padding: 0,0,0,5
+        spacing: 5
+
         Button:
-            size_hint:5, 1
+            size_hint:3, 1
             font_size:self.width/6
             text: "afspelen"
             on_press: root.playstring(entry.text)
 
         Button:
-            size_hint:5, 1
+            size_hint:3, 1
             font_size:self.width/6
             text: "<-"
             on_press: entry.text=entry.text[:-1]
 
         Button:
-            size_hint:5, 1
+            size_hint:3, 1
             font_size:self.width/6
             text: "wissen"
             on_press: entry.text=''
