@@ -26,7 +26,7 @@ class MainWindow(BoxLayout):
            'i':['italie'],'j':['jas'], 'k':['kiwi','komkommer','kokosnoot'], 'l':['lepel','limoen','lychee'],
            'm':['mes','meloen','mandarijn','mango'], 'n':['nectarine'], 'o':['olijven'], 'p':['peer','pompoen','pan','perzik','paprika'],
            'q':['qubit','quarks','quinoa'], 'r':['rozenbottel','roos'], 's':['sinaasappel'], 't':['tomaat'],
-           'u':['ufo'], 'v':['vork','vincent van gogh'], 'w':['wesp'], 'x':['xylofoon'], 'y':['Griekse Y'],
+           'u':['ufo'], 'v':['vork','vincent van gogh'], 'w':['wesp'], 'x':['xylofoon'], 'y':['griekse y','yoghurt','yoga'],
            'z':['zakmes'], 'ou':['auw'], 'oe':['oe, oe, oe'], 'ie':['iiiii'],
            'ei':['ei'],'eu':['europa'], 'ui':['ui']}
 
