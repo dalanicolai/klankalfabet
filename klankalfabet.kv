@@ -6,7 +6,9 @@ MainWindow:
 <MainWindow>:
     orientation: "vertical"
     img_source: im
-    im_but: im_button
+    im_button: im_button
+    auto_button:auto_button
+    hide_button:hide_button
 
     FloatLayout:
         size_hint:1,5
@@ -18,32 +20,60 @@ MainWindow:
 
     BoxLayout:
         size_hint: 1,1
+        padding: 0,0,0,5
+        spacing: 5
 
-        Label:
-            size_hint:0.7, 1
-            id: entry
-            font_size: self.height
+        Button:
+            size_hint: 10,1
+            on_press: root.playimage(self.text, im)
+            id: im_button
+            font_size:self.width/6
+            text: "verrassing"
+
+        Button:
+            size_hint: 5,1
+            id:auto_button
+            size_hint:5, 1
+            font_size:self.width/6
+            text: "auto: aan"
+            on_press: root.toggle_auto(self.text)
+
+        Button:
+            id:hide_button
+            size_hint:5, 1
+            font_size:self.width/6
+            text: "toon"
+            on_press: root.toggle_hide(self.text)
+
 
     BoxLayout:
         size_hint: 1,1
         padding: 0,0,0,5
         spacing: 5
 
-        Button:
-            font_size:self.width/8
-            text: "afspelen"
-            on_press: root.playstring(entry.text, im, im_button)
+
+        Label:
+            size_hint:10, 1
+            id: entry
+            font_size: self.height
 
         Button:
-            font_size:self.width/8
+            size_hint:5, 1
+            font_size:self.width/6
+            text: "afspelen"
+            on_press: root.playstring(entry.text)
+
+        Button:
+            size_hint:5, 1
+            font_size:self.width/6
+            text: "<-"
+            on_press: entry.text=entry.text[:-1]
+
+        Button:
+            size_hint:5, 1
+            font_size:self.width/6
             text: "wissen"
             on_press: entry.text=''
-
-        Button:
-            on_press: root.playimage(self.text, im)
-            id: im_button
-            font_size:self.width/8
-            text: "verrassing"
 
 
     GridLayout:
@@ -56,135 +86,135 @@ MainWindow:
         CustButton:
             id:a
             text: "A"
-            on_press: entry.text += self.text; root.key_pressed("a", im_button)
+            on_press: entry.text += self.text; root.key_pressed("a")
         CustButton:
             id:b
             text: "B"
-            on_press: entry.text += self.text; root.key_pressed("b", im_button)
+            on_press: entry.text += self.text; root.key_pressed("b")
         CustButton:
             id:c
             text: "C"
-            on_press: entry.text += self.text; root.key_pressed("c", im_button)
+            on_press: entry.text += self.text; root.key_pressed("c")
         CustButton:
             id:d
             text: "D"
-            on_press: entry.text += self.text; root.key_pressed("d", im_button)
+            on_press: entry.text += self.text; root.key_pressed("d")
         CustButton:
             id:e
             text: "E"
-            on_press: entry.text += self.text; root.key_pressed("e", im_button)
+            on_press: entry.text += self.text; root.key_pressed("e")
         CustButton:
             id:f
             text: "F"
-            on_press: entry.text += self.text; root.key_pressed("f", im_button)
+            on_press: entry.text += self.text; root.key_pressed("f")
         CustButton:
             id:g
             text: "G"
-            on_press: entry.text += self.text; root.key_pressed("g", im_button)
+            on_press: entry.text += self.text; root.key_pressed("g")
         CustButton:
             id:h
             text: "H"
-            on_press: entry.text += self.text; root.key_pressed("h", im_button)
+            on_press: entry.text += self.text; root.key_pressed("h")
 
 
         CustButton:
             id:i
             text: "I"
-            on_press: entry.text += self.text; root.key_pressed("i", im_button)
+            on_press: entry.text += self.text; root.key_pressed("i")
         CustButton:
             id:j
             text: "J"
-            on_press: entry.text += self.text; root.key_pressed("j", im_button)
+            on_press: entry.text += self.text; root.key_pressed("j")
         CustButton:
             id:k
             text: "K"
-            on_press: entry.text += self.text; root.key_pressed("k", im_button)
+            on_press: entry.text += self.text; root.key_pressed("k")
         CustButton:
             id:l
             text: "L"
-            on_press: entry.text += self.text; root.key_pressed("l", im_button)
+            on_press: entry.text += self.text; root.key_pressed("l")
         CustButton:
             id:m
             text: "M"
-            on_press: entry.text += self.text; root.key_pressed("m", im_button)
+            on_press: entry.text += self.text; root.key_pressed("m")
         CustButton:
             id:n
             text: "N"
-            on_press: entry.text += self.text; root.key_pressed("n", im_button)
+            on_press: entry.text += self.text; root.key_pressed("n")
         CustButton:
             id:o
             text: "O"
-            on_press: entry.text += self.text; root.key_pressed("o", im_button)
+            on_press: entry.text += self.text; root.key_pressed("o")
         CustButton:
             id:p
             text: "P"
-            on_press: entry.text += self.text; root.key_pressed("p", im_button)
+            on_press: entry.text += self.text; root.key_pressed("p")
 
 
         CustButton:
             id:q
             text: "Q"
-            on_press: entry.text += self.text; root.key_pressed("q", im_button)
+            on_press: entry.text += self.text; root.key_pressed("q")
         CustButton:
             id:r
             text: "R"
-            on_press: entry.text += self.text; root.key_pressed("r", im_button)
+            on_press: entry.text += self.text; root.key_pressed("r")
         CustButton:
             id:s
             text: "S"
-            on_press: entry.text += self.text; root.key_pressed("s", im_button)
+            on_press: entry.text += self.text; root.key_pressed("s")
         CustButton:
             id:t
             text: "T"
-            on_press: entry.text += self.text; root.key_pressed("t", im_button)
+            on_press: entry.text += self.text; root.key_pressed("t")
         CustButton:
             id:u
             text: "U"
-            on_press: entry.text += self.text; root.key_pressed("u", im_button)
+            on_press: entry.text += self.text; root.key_pressed("u")
         CustButton:
             id:v
             text: "V"
-            on_press: entry.text += self.text; root.key_pressed("v", im_button)
+            on_press: entry.text += self.text; root.key_pressed("v")
         CustButton:
             id:w
             text: "W"
-            on_press: entry.text += self.text; root.key_pressed("w", im_button)
+            on_press: entry.text += self.text; root.key_pressed("w")
         CustButton:
             id:x
             text: "X"
-            on_press: entry.text += self.text; root.key_pressed("x", im_button)
+            on_press: entry.text += self.text; root.key_pressed("x")
 
 
         CustButton:
             id:y
             text: "Y"
-            on_press: entry.text += self.text; root.key_pressed("y", im_button)
+            on_press: entry.text += self.text; root.key_pressed("y")
         CustButton:
             id:z
             text: "Z"
-            on_press: entry.text += self.text; root.key_pressed("z", im_button)
+            on_press: entry.text += self.text; root.key_pressed("z")
         CustButton:
             id:ou
             text: "OU"
-            on_press: entry.text += self.text; root.key_pressed("ou", im_button)
+            on_press: entry.text += self.text; root.key_pressed("ou")
         CustButton:
             id:oe
             text: "OE"
-            on_press: entry.text += self.text; root.key_pressed("oe", im_button)
+            on_press: entry.text += self.text; root.key_pressed("oe")
         CustButton:
             id:ie
             text: "IE"
-            on_press: entry.text += self.text; root.key_pressed("ie", im_button)
+            on_press: entry.text += self.text; root.key_pressed("ie")
         CustButton:
             id:grapje
             text: "IJ/EI"
-            on_press: entry.text += self.text; root.key_pressed("ei", im_button)
+            on_press: entry.text += self.text; root.key_pressed("ei")
         CustButton:
             id:eu
             text: "EU"
-            on_press: entry.text += self.text; root.key_pressed("eu", im_button)
+            on_press: entry.text += self.text; root.key_pressed("eu")
         CustButton:
             id:ui
             text: "UI"
-            on_press: entry.text += self.text; root.key_pressed("ui", im_button)
+            on_press: entry.text += self.text; root.key_pressed("ui")
 
