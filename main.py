@@ -4,6 +4,7 @@ kivy.require('1.10.0')
 import os
 from time import sleep
 import random
+import yaml
 
 from jnius import autoclass
 
@@ -15,20 +16,20 @@ from kivy.properties import ObjectProperty
 
 from kivy.utils import platform
 
+
+def import_yaml(file):
+    stream = open(file, 'r')
+    db = yaml.load(stream)
+    return db
+
+db = import_yaml('alfadb.yml')
+words = {k: v for i in db for k, v in db[i].items()}
+
 class MainWindow(BoxLayout):
     element = 'verassing'
     im = ObjectProperty(id)
     im_button = ObjectProperty(id)
     auto_button = ObjectProperty(id)
-
-    words={'a':['appel','aardbei','ananas'], 'b':['banaan','bezem'], 'c':['citroen'], 'd':['druiven'],
-           'e':['emmer'], 'f':['fruit'], 'g':['grapefruit','granaatappel'], 'h':['hamer'],
-           'i':['italie'],'j':['jas'], 'k':['kiwi','komkommer','kokosnoot'], 'l':['lepel','limoen','lychee'],
-           'm':['mes','meloen','mandarijn','mango'], 'n':['nectarine'], 'o':['olijven'], 'p':['peer','pompoen','pan','perzik','paprika'],
-           'q':['qubit','quarks','quinoa'], 'r':['rozenbottel','roos'], 's':['sinaasappel'], 't':['tomaat'],
-           'u':['ufo'], 'v':['vork','vincent van gogh'], 'w':['wesp'], 'x':['xylofoon'], 'y':['griekse y','yoghurt','yoga'],
-           'z':['zakmes'], 'ou':['auw'], 'oe':['oe, oe, oe'], 'ie':['iiiii'],
-           'ei':['ei'],'eu':['europa'], 'ui':['ui']}
 
     def on_parent(self, widget, parent):
         if platform == 'android':
@@ -94,7 +95,7 @@ class MainWindow(BoxLayout):
         # os.system("mpg123 good.mp3")
 
     def key_pressed(self, letter):
-        self.element = random.choice(self.words[letter])
+        self.element = random.choice(words[letter])
         self.im.source = ''.join(('images/',self.element,'.jpg'))
         self.im.reload()
         sound = SoundLoader.load(''.join(('sounds/',letter,'.ogg')))
@@ -106,8 +107,6 @@ class MainWindow(BoxLayout):
         if platform == 'android' and self.auto_button.text == 'auto: aan':
             sleep(1)
             self.tts.speak(self.element, self.TextToSpeech.QUEUE_FLUSH, None)
-
-
 
 
 class KlankalfabetApp(App):

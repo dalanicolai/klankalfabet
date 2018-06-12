@@ -1,0 +1,95 @@
+fruit:
+  a:
+  - appel
+  - aardbei
+  - ananas
+  b:
+  - banaan
+  c:
+  - citroen
+  d:
+  - druiven
+  e:
+  ei:
+  - ei
+  eu:
+  - europa
+  f:
+  - fruit
+  g:
+  - grapefruit
+  - granaatappel
+  h:
+  i:
+  - italie
+  ie:
+  - iiiii
+  j:
+  k:
+  - kiwi
+  - komkommer
+  - kokosnoot
+  l:
+  - lepel
+  - limoen
+  - lychee
+  m:
+  - mes
+  - meloen
+  - mandarijn
+  - mango
+  n:
+  - nectarine
+  o:
+  - olijven
+  oe:
+  - oe, oe, oe
+  ou:
+  - auw
+  p:
+  - peer
+  - pompoen
+  - pan
+  - perzik
+  - paprika
+  q:
+  - qubit
+  - quarks
+  - quinoa
+  r:
+  - rozenbottel
+  - roos
+  s:
+  - sinaasappel
+  t:
+  - tomaat
+  u:
+  - ufo
+  ui:
+  - ui
+  v:
+  - vork
+  - vincent van gogh
+  w:
+  - wesp
+  x:
+  - xylofoon
+  y:
+  - griekse y
+  - yoghurt
+  - yoga
+  z:
+  - zakmes
+gereedschap:
+  h:
+  - hamer
+huishouden:
+  b:
+  - bezem
+  d:
+  - dweil
+  e:
+  - emmer
+kleding:
+  j:
+  - jas
